@@ -47,3 +47,4 @@ class Account:
         print(f"Your account name is: {self.name}")
         print(f"Your account balance is: {self.balance}")
         print(f"Not advisable to display password, but your account password is : {self.password}")
+        return self.name, self.balance, self.password
