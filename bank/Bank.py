@@ -30,7 +30,7 @@ class Bank:
         user_name = input("Please Enter your name: ")
         user_password = input("Please Enter your password: ")
         user_amount = int(input("Please Enter amount to open the account"))
-        account = Account(user_name, user_password, user_amount)
+        account = self.create_account(user_name, user_password, user_amount)
         acct_number = self.next_acct_number
         self.account_dict[acct_number] = account
         self.next_acct_number += 1
