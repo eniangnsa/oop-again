@@ -59,9 +59,9 @@ class Bank:
     
     def deposit(self):
         print("To make a deposit, please provide the following information")
-        user_password = input("Please Enter your password: ")
         user_amount = int(input("Please Enter the amount you want to deposit: "))
         user_acct_number = int(input("Please enter your account number:  "))
+        user_password = input("Please Enter your password: ")
         
         print("***Amount Verification***")
         if user_amount < 0:
