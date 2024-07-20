@@ -5,13 +5,13 @@ from Bank import Bank
 
 # Create a bank object from the Bank class
 
-Zenith_Bank = Bank()
+Zenith_Bank = Bank(hours=40, address='tomsk', phone=+2347033669404)
 
 # create two account for Zenith Bank
-kirill_acct_number = Zenith_Bank.create_account("Kirill", "kirill@siberia",10_000)
+kirill_acct_number = Zenith_Bank.create_account(name="Kirill", amount=10000, password="kirill@siberia")
 print(f"New Account opened. name is : {Zenith_Bank.account_dict[kirill_acct_number].name} and account number is:  {kirill_acct_number}")
 
-david_acct_number  = Zenith_Bank.create_account("David", "david@siberia", 20_000)
+david_acct_number  = Zenith_Bank.create_account(name="David", password="david@siberia", amount=20_000)
 print(f"New Account opened. name is : {Zenith_Bank.account_dict[david_acct_number].name} and account number is:  {david_acct_number}")
 
 
@@ -23,7 +23,6 @@ while True:
     print("To deposit money, press d")
     print("To withdraw money, press w")
     print("To show account details, press s")
-    print("To check balance, press b")
     print("To quit, press q")
     
     print(Zenith_Bank.account_dict)
@@ -47,8 +46,6 @@ while True:
     elif action == "q":
         break
     
-    elif action == 'b':
-        Zenith_Bank.balance()
     else:
         print("Sorry, you entered an invalid input")
     break

@@ -2,15 +2,16 @@
 # Errors indicated by the 'raise' statement
 
 # Define a custom exception
+# Define a custom exception
 class AbortTransaction(Exception):
     '''
-    raise this exception to abort a bank transaction
+    Raise this exception to abort a bank transaction
     '''
     pass
 
 class Account:
     def __init__(self, name, balance, password):
-        self.nanme = name
+        self.name = name  # Corrected typo here
         self.balance = self.validate_amount(balance)
         self.password = password
         
@@ -32,13 +33,13 @@ class Account:
         self.balance += amount
         return self.balance
     
-    def balance(self):
+    def get_balance(self):  # Renamed method to avoid conflict
         return self.balance
     
     def withdraw(self, amount):
         amount = self.validate_amount(amount)
         if amount > self.balance:
-            raise AbortTransaction("Insuffient funds")
+            raise AbortTransaction("Insufficient funds")
         self.balance -= amount
         return self.balance
     
@@ -46,4 +47,4 @@ class Account:
         print(f"Name: {self.name}")
         print(f"Balance: {self.balance}")
         print(f"Password: {self.password}")
-        
+
