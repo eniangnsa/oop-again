@@ -2,6 +2,7 @@
 # This version makes use of the Bank Class
 
 from Bank import Bank
+from new_account import AbortTransaction
 
 # Create a bank object from the Bank class
 
@@ -28,27 +29,27 @@ while True:
     print(Zenith_Bank.account_dict)
     action = input("What do you want to do ? ")
     
-    if action == "d":
-        Zenith_Bank.deposit()
-    
-    elif action == "w":
-        Zenith_Bank.withdraw()
-    
-    elif action == "o":
-        Zenith_Bank.open_account()
-    
-    elif action == "c":
-        Zenith_Bank.close()
+    try:
         
-    elif action == "s":
-        Zenith_Bank.show()
+        if action == "d":
+            Zenith_Bank.deposit()
         
-    elif action == "q":
-        break
-    
-    else:
+        elif action == "w":
+            Zenith_Bank.withdraw()
+        
+        elif action == "o":
+            Zenith_Bank.open_account()
+        
+        elif action == "c":
+            Zenith_Bank.close()
+            
+        elif action == "s":
+            Zenith_Bank.show()
+            
+        elif action == "q":
+            break
+        
+    except AbortTransaction:
         print("Sorry, you entered an invalid input")
-    break
-        
-    
+          
 print("E don do")
