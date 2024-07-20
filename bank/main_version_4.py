@@ -3,7 +3,6 @@
 
 from Bank import Bank
 from new_account import AbortTransaction
-
 # Create a bank object from the Bank class
 
 Zenith_Bank = Bank(hours=40, address='tomsk', phone=+2347033669404)
