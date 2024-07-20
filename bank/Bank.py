@@ -1,11 +1,34 @@
 # create a bank class
 
-from account_class import Account
+from new_account import AbortTransaction, Account
 
 class Bank:
-    def __init__(self):
+    def __init__(self, hours, address, phone):
         self.account_dict = {}
         self.next_acct_number = 0
+        self.hours = hours
+        self.address = address
+        self.phone = phone
+        
+    def ask_for_account_number(self):
+        account_number = input('What is your account number?: ')
+        
+        try:
+            account_number = int(account_number)
+            
+        except ValueError:
+            print("Account Number must be a number")
+            
+        if account_number not in self.account_dict:
+            raise AbortTransaction("Sorry you don't have an account with us")
+        
+        return account_number
+    
+    def get_user_account(self):
+        account_number = self.ask_for_account_number()
+        account = self.account_dict[account_number]
+        return account
+        
         
     def create_account(self, name, password, amount):
         """to create a new account
