@@ -1,7 +1,5 @@
 # Account Class
 # Errors indicated by the 'raise' statement
-
-# Define a custom exception
 # Define a custom exception
 class AbortTransaction(Exception):
     '''
@@ -11,7 +9,7 @@ class AbortTransaction(Exception):
 
 class Account:
     def __init__(self, name, balance, password):
-        self.name = name  # Corrected typo here
+        self.name = name  
         self.balance = self.validate_amount(balance)
         self.password = password
         
