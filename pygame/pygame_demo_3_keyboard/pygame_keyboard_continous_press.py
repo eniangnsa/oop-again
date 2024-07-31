@@ -26,7 +26,7 @@ N_PIXELS_TO_MOVE = 3
 pygame.init()
 window = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGTH))
 clock = pygame.time.Clock()
-
+caption =  pygame.display.set_caption('Ball Game')
 
 # 4 - Load the assests
 ball_image = pygame.image.load('images/images.jpeg')
