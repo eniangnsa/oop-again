@@ -32,7 +32,7 @@ class Ball():
         if (self.x < 0) | (self.x >= self.window_width):
             self.x_speed = -self.x_speed
             
-        if (self.y < 0) | (self.y >= 0):
+        if (self.y < 0) | (self.y >= self.window_height):
             self.y_speed = -self.y_speed
             
         # update the ball's x and y, using the speed in two directions
